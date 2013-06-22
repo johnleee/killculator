@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
   
   <!-- Extra Codiqa features -->
-  <link rel="stylesheet" href="css/codiqa.ext.css">
+  <link rel="stylesheet" href="codiqa.ext.css">
   
   <link rel="stylesheet" href="https://codiqa.com/view/9fcb36ec/css">
   
@@ -24,6 +24,69 @@
   
 </head>
 <body>
+  <!-- Home -->
+  <div data-role="page" id="home">
+      <div data-theme="a" data-role="header">
+          <h3>
+              Home
+          </h3>
+      </div>
+      <div data-role="content">
+          <div>
+              <p>
+                  <b>
+                      Welcome to the KillCulator
+                      <br>
+                  </b>
+              </p>
+          </div>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider" role="heading">
+                  Accuracy Reports
+              </li>
+              <li data-theme="c">
+                  <a href="#kill_scores" data-transition="slide">
+                      KILLculator
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#facebook" data-transition="slide">
+                      Trophy Target
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#score_summary" data-transition="slide">
+                      Heat Maps
+                  </a>
+              </li>
+          </ul>
+          <a data-role="button" href="#data_entry">
+              Track Shooting
+          </a>
+          <a data-role="button" href="#home">
+              Login
+          </a>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
+                      Score
+                  </a>
+              </li>
+              <li>
+                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
+                      Track
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
   <!-- Data entry -->
   <div data-role="page" data-theme="b" id="data_entry">
       <div data-theme="a" data-role="header">
@@ -160,13 +223,13 @@
                   </a>
               </li>
               <li>
-                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
-                      Social
+                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
+                      Home
                   </a>
               </li>
               <li>
                   <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
-                      Shoot
+                      Track
                   </a>
               </li>
           </ul>
@@ -312,13 +375,13 @@
                   </a>
               </li>
               <li>
-                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
-                      Social
+                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
+                      Home
                   </a>
               </li>
               <li>
                   <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
-                      Shoot
+                      Track
                   </a>
               </li>
           </ul>
@@ -344,13 +407,13 @@
                   </a>
               </li>
               <li>
-                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
-                      Social
+                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
+                      Home
                   </a>
               </li>
               <li>
                   <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
-                      Shoot
+                      Track
                   </a>
               </li>
           </ul>
@@ -407,52 +470,57 @@
                   </a>
               </li>
               <li>
-                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
-                      Social
+                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
+                      Home
                   </a>
               </li>
               <li>
                   <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
-                      Shoot
+                      Track
                   </a>
               </li>
           </ul>
       </div>
   </div>
-  <!-- Home -->
-  <div data-role="page" id="home">
+  <!-- Summary Page -->
+  <div data-role="page" id="score_summary">
       <div data-theme="a" data-role="header">
           <h3>
+              Shooting Summary
           </h3>
       </div>
       <div data-role="content">
           <div>
-              <b>
-                  Enter content here...
-              </b>
+              <p>
+                  <b>
+                      Accuracy heatmap
+                  </b>
+              </p>
           </div>
-          <ul data-role="listview" data-divider-theme="b" data-inset="true">
-              <li data-role="list-divider" role="heading">
-                  Divider
-              </li>
-              <li data-theme="c">
-                  <a href="#data_entry" data-transition="slide">
-                      KILLculator
-                  </a>
-              </li>
-              <li data-theme="c">
-                  <a href="#data_entry" data-transition="slide">
-                      Trophy Target
-                  </a>
-              </li>
-              <li data-theme="c">
-                  <a href="#score_summary" data-transition="slide">
-                      Heatmaps
-                  </a>
-              </li>
-          </ul>
-          <a data-role="button" href="#home">
-              Button
+          <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
+              <img src="http://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+          </div>
+          <div data-role="fieldcontain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                  <legend>
+                      Time interval
+                  </legend>
+                  <input id="radio18" name="" value="radio1" type="radio">
+                  <label for="radio18">
+                      Round
+                  </label>
+                  <input id="radio19" name="" value="radio19" type="radio">
+                  <label for="radio19">
+                      Hour
+                  </label>
+                  <input id="radio20" name="" value="radio20" type="radio">
+                  <label for="radio20">
+                      Day
+                  </label>
+              </fieldset>
+          </div>
+          <a data-role="button" href="#score_summary">
+              Share
           </a>
       </div>
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
@@ -463,35 +531,80 @@
                   </a>
               </li>
               <li>
-                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
-                      Social
+                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
+                      Home
                   </a>
               </li>
               <li>
                   <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
-                      Shoot
+                      Track
                   </a>
               </li>
           </ul>
       </div>
   </div>
-  <!-- Summary Page -->
-  <div data-role="page" id="score_summary">
-      <div data-theme="a" data-role="header">
-          <h3>
-              Score Summary
-          </h3>
-      </div>
+  <!-- social image preview/submit -->
+  <div data-role="page" id="page8">
       <div data-role="content">
+          <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
+              <img src="http://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+          </div>
           <div>
               <p>
                   <b>
-                      Hot Spot
+                      S'quach kill rates:
+                      <br>
                   </b>
               </p>
           </div>
-          <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
-              <img src="http://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <div>
+                      <b>
+                          Enter content here...
+                      </b>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+              </div>
+              <div class="ui-block-a">
+                  <div>
+                      <b>
+                          Enter content here...
+                      </b>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+              </div>
+              <div class="ui-block-a">
+                  <div>
+                      <b>
+                          Enter content here...
+                      </b>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+              </div>
+          </div>
+          <div>
+              <p>
+                  <b>
+                      Share content on Facebook?
+                      <br>
+                  </b>
+              </p>
+          </div>
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <a data-role="button" href="#page8">
+                      Cancel
+                  </a>
+              </div>
+              <div class="ui-block-b">
+                  <a data-role="button" href="#page8">
+                      Confirm
+                  </a>
+              </div>
           </div>
       </div>
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
@@ -502,13 +615,13 @@
                   </a>
               </li>
               <li>
-                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
-                      Social
+                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
+                      Home
                   </a>
               </li>
               <li>
                   <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
-                      Shoot
+                      Track
                   </a>
               </li>
           </ul>

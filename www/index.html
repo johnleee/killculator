@@ -86,7 +86,7 @@
               </div>
               <div class="ui-block-b">
                   <div data-role="fieldcontain">
-                      <input name="" id="textinput3" placeholder="" value="" type="text">
+                      <input name="" id="textinput3" placeholder="" value="" type="number">
                   </div>
               </div>
               <div class="ui-block-c">
@@ -101,7 +101,7 @@
               </div>
               <div class="ui-block-d">
                   <div data-role="fieldcontain">
-                      <input name="" id="textinput5" placeholder="" value="" type="text">
+                      <input name="" id="textinput5" placeholder="" value="" type="number">
                   </div>
               </div>
           </div>
@@ -125,7 +125,7 @@
               </div>
               <div class="ui-block-b">
                   <div data-role="fieldcontain">
-                      <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                      <fieldset data-role="controlgroup" data-type="vertical">
                           <legend>
                               Elevation
                           </legend>
@@ -141,78 +141,26 @@
                   </div>
               </div>
           </div>
-          <div class="ui-grid-b">
+          <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a data-role="button" href="#data_entry">
-                      1
+                  <a data-role="button" href="#score_summary">
+                      End Round
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a data-role="button" href="#data_entry">
-                      2
-                  </a>
-              </div>
-              <div class="ui-block-c">
-                  <a data-role="button" href="#data_entry">
-                      3
-                  </a>
-              </div>
-              <div class="ui-block-a">
-                  <a data-role="button" href="#data_entry">
-                      4
-                  </a>
-              </div>
-              <div class="ui-block-b">
-                  <a data-role="button" href="#data_entry">
-                      5
-                  </a>
-              </div>
-              <div class="ui-block-c">
-                  <a data-role="button" href="#data_entry">
-                      6
-                  </a>
-              </div>
-              <div class="ui-block-a">
-                  <a data-role="button" href="#data_entry">
-                      7
-                  </a>
-              </div>
-              <div class="ui-block-b">
-                  <a data-role="button" href="#data_entry">
-                      8
-                  </a>
-              </div>
-              <div class="ui-block-c">
-                  <a data-role="button" href="#data_entry">
-                      9
-                  </a>
-              </div>
-              <div class="ui-block-a">
-                  <a data-role="button" href="#data_entry">
-                      Del.
-                  </a>
-              </div>
-              <div class="ui-block-b">
-                  <a data-role="button" href="#data_entry">
-                      0
-                  </a>
-              </div>
-              <div class="ui-block-c">
-                  <a data-role="button" href="#page9">
-                      Next
-                  </a>
+                  <input type="submit" value="Submit shot">
               </div>
           </div>
       </div>
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
           <ul>
               <li>
-                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="gear">
+                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
                       Score
                   </a>
               </li>
               <li>
-                  <a href="#social" data-transition="fade" data-theme="" data-icon="star">
+                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
                       Social
                   </a>
               </li>
@@ -359,12 +307,12 @@
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
           <ul>
               <li>
-                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="gear">
+                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
                       Score
                   </a>
               </li>
               <li>
-                  <a href="#social" data-transition="fade" data-theme="" data-icon="star">
+                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
                       Social
                   </a>
               </li>
@@ -377,26 +325,26 @@
       </div>
   </div>
   <!-- Facebook -->
-  <div data-role="page" id="social">
+  <div data-role="page" id="facebook">
       <div data-theme="a" data-role="header">
           <h3>
               Facebook
           </h3>
       </div>
       <div data-role="content">
-          <a data-role="button" href="#social">
-              Share To Facebook
+          <a data-role="button" href="#facebook">
+              Share on ...
           </a>
       </div>
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
           <ul>
               <li>
-                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="gear">
+                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
                       Score
                   </a>
               </li>
               <li>
-                  <a href="#social" data-transition="fade" data-theme="" data-icon="star">
+                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
                       Social
                   </a>
               </li>
@@ -429,21 +377,21 @@
                   <legend>
                       Choose:
                   </legend>
-                  <input id="radio1" name="distance" value="radio1" type="radio">
-                  <label for="radio1">
-                      200 yards
-                  </label>
-                  <input id="radio2" name="distance" value="radio2" type="radio">
-                  <label for="radio2">
-                      100 yards
+                  <input id="radio4" name="distance" value="radio4" type="radio">
+                  <label for="radio4">
+                      25 yards
                   </label>
                   <input id="radio3" name="distance" value="radio3" type="radio">
                   <label for="radio3">
                       50 yards
                   </label>
-                  <input id="radio4" name="distance" value="radio4" type="radio">
-                  <label for="radio4">
-                      25 yards
+                  <input id="radio2" name="distance" value="radio2" type="radio">
+                  <label for="radio2">
+                      100 yards
+                  </label>
+                  <input id="radio1" name="distance" value="radio1" type="radio">
+                  <label for="radio1">
+                      200 yards
                   </label>
               </fieldset>
           </div>
@@ -454,12 +402,12 @@
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
           <ul>
               <li>
-                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="gear">
+                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
                       Score
                   </a>
               </li>
               <li>
-                  <a href="#social" data-transition="fade" data-theme="" data-icon="star">
+                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
                       Social
                   </a>
               </li>
@@ -483,30 +431,26 @@
                   Enter content here...
               </b>
           </div>
-          <div data-role="navbar" data-iconpos="top">
-              <ul>
-                  <li>
-                      <a href="#home" data-transition="fade" data-theme="" data-icon="">
-                          Trophy Target
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#home" data-transition="fade" data-theme="" data-icon="">
-                          KILLculator
-                      </a>
-                  </li>
-              </ul>
-          </div>
-          <div class="ui-grid-a">
-              <div class="ui-block-a">
-              </div>
-              <div class="ui-block-b">
-              </div>
-              <div class="ui-block-a">
-              </div>
-              <div class="ui-block-b">
-              </div>
-          </div>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider" role="heading">
+                  Divider
+              </li>
+              <li data-theme="c">
+                  <a href="#data_entry" data-transition="slide">
+                      KILLculator
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#data_entry" data-transition="slide">
+                      Trophy Target
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#score_summary" data-transition="slide">
+                      Heatmaps
+                  </a>
+              </li>
+          </ul>
           <a data-role="button" href="#home">
               Button
           </a>
@@ -514,12 +458,12 @@
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
           <ul>
               <li>
-                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="gear">
+                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
                       Score
                   </a>
               </li>
               <li>
-                  <a href="#social" data-transition="fade" data-theme="" data-icon="star">
+                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
                       Social
                   </a>
               </li>
@@ -532,7 +476,7 @@
       </div>
   </div>
   <!-- Summary Page -->
-  <div data-role="page" id="page9">
+  <div data-role="page" id="score_summary">
       <div data-theme="a" data-role="header">
           <h3>
               Score Summary
@@ -542,7 +486,7 @@
           <div>
               <p>
                   <b>
-                      Hot Map
+                      Hot Spot
                   </b>
               </p>
           </div>
@@ -553,12 +497,12 @@
       <div data-role="tabbar" data-iconpos="top" data-theme="a">
           <ul>
               <li>
-                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="gear">
+                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
                       Score
                   </a>
               </li>
               <li>
-                  <a href="#social" data-transition="fade" data-theme="" data-icon="star">
+                  <a href="#facebook" data-transition="fade" data-theme="" data-icon="star">
                       Social
                   </a>
               </li>

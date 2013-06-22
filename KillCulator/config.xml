@@ -34,7 +34,7 @@
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
 
-    <content src="index.html" />
+    <content src="login.html" />
 
     <plugins>
         <plugin name="Device" value="CDVDevice" />

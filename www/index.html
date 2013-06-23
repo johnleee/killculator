@@ -23,7 +23,7 @@
   <script src="https://codiqa.com/view/9fcb36ec/js"></script>
   <script src="https://apigee.com/usergrid/sdk/usergrid.0.10.5.js"></script>
   <script src="js/killculator.js"></script>
-      
+
   
 </head>
 <body>
@@ -31,7 +31,7 @@
   <div data-role="page" id="login">
       <div data-role="content">
           <div style="">
-              <img style="width: 100%; height: 547%" src="https://s3.amazonaws.com/assets.codiqa.com/RLqt3VOCSGi7Nm6q7Xaz_gun3.jpg">
+              <img style="width: 300px; height: px" src="https://s3.amazonaws.com/assets.codiqa.com/rekToORbSQa66qsUliWY_gun.jpg">
           </div>
           <div>
               <p>
@@ -48,7 +48,7 @@
                   Email
               </label>
               <input name="" id="textinput9" placeholder="Please enter your email" value=""
-              type="text">
+              type="email">
           </div>
           <div data-role="fieldcontain">
               <label for="textinput10">
@@ -58,12 +58,12 @@
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a data-role="button" data-transition="pop" data-theme="c" href="#register">
+                  <a data-role="button" data-transition="none" data-theme="c" href="#register">
                       Register
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a data-role="button" data-transition="pop" data-theme="b" href="javascript:luser()">
+                  <a data-role="button" data-transition="none" data-theme="b" href="javascript:luser()">
                       Login
                   </a>
               </div>
@@ -137,95 +137,61 @@
   <div data-role="page" data-theme="b" id="data_entry">
       <div data-theme="a" data-role="header">
           <h3>
-              Round 3
+              Shot Entry
           </h3>
       </div>
       <div data-role="content">
-          <div>
-              <p>
-                  <b>
-                      Please Enter Width and Height
-                  </b>
-              </p>
-          </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <div>
-                      <p style="text-align: center;">
-                          <b>
-                              Shots
-                          </b>
-                      </p>
-                      <p style="text-align: center;">
-                          <b>
-                              ​123
-                              <br>
-                          </b>
-                      </p>
-                  </div>
+                  <h2 id="horizontalcolheader" class="horizontalcolheader">
+                      Horizontal
+                  </h2>
               </div>
               <div class="ui-block-b">
-                  <div>
-                      <p style="text-align: center;">
-                          <b>
-                              Last
-                          </b>
-                      </p>
-                      <p style="text-align: center;">
-                          <b>
-                              <span style="font-size: large;" data-mce-style="font-size: large;">
-                                  (12,3)
-                              </span>
-                              <br>
-                          </b>
-                      </p>
-                  </div>
+                  <h2 id="verticalcolheader" class="verticalcolheader">
+                      Vertical
+                  </h2>
               </div>
           </div>
           <div class="ui-grid-c">
               <div class="ui-block-a">
-                  <div>
-                      <p style="text-align: right;" data-mce-style="text-align: right;">
-                          <b>
-                              Width (in)&nbsp;
-                          </b>
-                          <br>
-                      </p>
+                  <div data-role="fieldcontain" class="horizontalnuminput">
+                      <input name="" id="horizontalnuminput" placeholder="" value="" type="number">
                   </div>
               </div>
               <div class="ui-block-b">
-                  <div data-role="fieldcontain">
-                      <input name="" id="textinput3" placeholder="" value="" type="number">
-                  </div>
-              </div>
-              <div class="ui-block-c">
-                  <div>
-                      <p style="text-align: right;" data-mce-style="text-align: right;">
+                  <div id="horizonalinches" class="horizontalinches">
+                      <p style="text-align: center;">
                           <b>
-                              Height&nbsp;&nbsp; (in)
-                              <br>
+                              inches
                           </b>
                       </p>
                   </div>
               </div>
+              <div class="ui-block-c">
+                  <div data-role="fieldcontain" class="verticalnuminput">
+                      <input name="" id="verticalnuminput" placeholder="" value="" type="number">
+                  </div>
+              </div>
               <div class="ui-block-d">
-                  <div data-role="fieldcontain">
-                      <input name="" id="textinput5" placeholder="" value="" type="number">
+                  <div>
+                      <p style="text-align: center;">
+                          <b>
+                              inches
+                          </b>
+                      </p>
                   </div>
               </div>
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <div data-role="fieldcontain">
+                  <div id="windageselect" data-role="fieldcontain">
                       <fieldset data-role="controlgroup" data-type="horizontal">
-                          <legend>
-                              Windage
-                          </legend>
-                          <input id="radio12" name="" value="radio1" type="radio">
+                          <input id="radio12" name="" value="left" type="radio">
                           <label for="radio12">
                               L
                           </label>
-                          <input id="radio14" name="" value="radio14" type="radio">
+                          <input id="radio14" name="" value="right" type="radio">
                           <label for="radio14">
                               R
                           </label>
@@ -233,33 +199,65 @@
                   </div>
               </div>
               <div class="ui-block-b">
-                  <div data-role="fieldcontain">
-                      <fieldset data-role="controlgroup" data-type="vertical">
-                          <legend>
-                              Elevation
-                          </legend>
-                          <input id="radio13" name="" value="radio1" type="radio">
-                          <label for="radio13">
-                              High
-                          </label>
-                          <input id="radio17" name="" value="radio17" type="radio">
-                          <label for="radio17">
-                              Low
-                          </label>
-                      </fieldset>
+                  <div class="ui-grid-a">
+                      <div class="ui-block-a">
+                          <div id="elevationselect" data-role="fieldcontain">
+                              <fieldset data-role="controlgroup" data-type="vertical">
+                                  <input id="radio25" name="" value="high" type="radio">
+                                  <label for="radio25">
+                                      High
+                                  </label>
+                                  <input id="radio26" name="" value="low" type="radio">
+                                  <label for="radio26">
+                                      Low
+                                  </label>
+                              </fieldset>
+                          </div>
+                      </div>
+                      <div class="ui-block-b">
+                      </div>
                   </div>
               </div>
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a data-role="button" href="#score_summary">
-                      End Round
+                  <a id="nextroundsubmit" data-role="button" href="#score_summary" class="nextroundsubmit">
+                      Next round
                   </a>
               </div>
               <div class="ui-block-b">
                   <a data-role="button" data-transition="pop" data-theme="b" href="javascript:cshot()">
-                      Submit shot
+                      Enter
                   </a>
+              </div>
+          </div>
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <div>
+                      <p style="text-align: center;">
+                          <b>
+                              Distance:
+                          </b>
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+                  <div data-role="fieldcontain" class="distanceselect">
+                      <select id="distanceselect" name="">
+                          <option value="25">
+                              25 yards
+                          </option>
+                          <option value="50">
+                              50 yards
+                          </option>
+                          <option value="100">
+                              100 yards
+                          </option>
+                          <option value="200">
+                              200 yards
+                          </option>
+                      </select>
+                  </div>
               </div>
           </div>
       </div>
@@ -283,38 +281,61 @@
           </ul>
       </div>
   </div>
-  <!-- Kill scores -->
+  <!-- KillCulator -->
   <div data-role="page" id="kill_scores">
       <div data-theme="a" data-role="header">
           <h3>
-              Kill scores
+              KillCulator
           </h3>
       </div>
       <div data-role="content">
-          <div class="ui-grid-a">
+          <div class="ui-grid-b">
               <div class="ui-block-a">
-                  <div>
+              </div>
+              <div class="ui-block-b">
+                  <div id="killcolumnlabel">
                       <p style="text-align: center;">
                           <b>
-                              200 yards
+                              Kill
+                          </b>
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-c">
+                  <div id="woundcolumnlabel">
+                      <p style="text-align: center;">
+                          <b>
+                              Wound
+                          </b>
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-a">
+                  <div id="50yardlabel">
+                      <p style="text-align: center;">
+                          <b>
+                              50 yards
                               <br>
                           </b>
                       </p>
                   </div>
               </div>
               <div class="ui-block-b">
-                  <div>
+                  <div id="kill50yards">
                       <p style="text-align: center;" data-mce-style="text-align: center;">
-                          <span style="font-size: large;">
-                              <b>
-                                  25%
-                              </b>
-                          </span>
+                          75%
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-c">
+                  <div id="wound50yards">
+                      <p style="text-align: center;">
+                          85%
                       </p>
                   </div>
               </div>
               <div class="ui-block-a">
-                  <div>
+                  <div id="100yardlabel">
                       <p style="text-align: center;">
                           <b>
                               100 yards
@@ -324,93 +345,114 @@
                   </div>
               </div>
               <div class="ui-block-b">
-                  <div>
+                  <div id="kill100yards">
+                      <p style="text-align: center;" data-mce-style="text-align: center;">
+                          50%
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-c">
+                  <div id="wound100yards">
                       <p style="text-align: center;">
-                          <b>
-                              50%
-                          </b>
+                          70%
                       </p>
                   </div>
               </div>
               <div class="ui-block-a">
+                  <div id="200yardlabel">
+                      <p style="text-align: center;" data-mce-style="text-align: center;">
+                          <strong>
+                              200 yards
+                          </strong>
+                          <br>
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+                  <div id="kill200yards">
+                      <p style="text-align: center;" data-mce-style="text-align: center;">
+                          25%
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-c">
+                  <div id="wound200yards">
+                      <p style="text-align: center;">
+                          40%
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
                   <div>
                       <p style="text-align: center;">
                           <b>
-                              50 yds
+                              <span style="font-size: large;">
+                                  Target:
+                              </span>
                               <br>
                           </b>
                       </p>
                   </div>
               </div>
               <div class="ui-block-b">
+                  <div data-role="fieldcontain">
+                      <select id="targetselect" name="">
+                          <option value="option1">
+                              Streisand
+                          </option>
+                          <option value="value">
+                              Norris
+                          </option>
+                          <option value="value">
+                              Sasquach
+                          </option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
                   <div>
                       <p style="text-align: center;">
                           <b>
-                              75%
+                              <span style="font-size: large;">
+                                  Time range:
+                              </span>
+                              <br>
                           </b>
                       </p>
                   </div>
               </div>
-          </div>
-          <div data-role="fieldcontain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                  <legend>
-                      What are you hunting?
-                  </legend>
-                  <input id="radio9" name="" value="radio1" type="radio">
-                  <label for="radio9">
-                      Streisand
-                  </label>
-                  <input id="radio10" name="" value="radio10" type="radio">
-                  <label for="radio10">
-                      Bieber
-                  </label>
-                  <input id="radio11" name="" value="radio11" type="radio">
-                  <label for="radio11">
-                      S'quach
-                  </label>
-              </fieldset>
-          </div>
-          <div data-role="fieldcontain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                  <input id="radio15" name="" value="radio1" type="radio">
-                  <label for="radio15">
-                      Kill
-                  </label>
-                  <input id="radio16" name="" value="radio16" type="radio">
-                  <label for="radio16">
-                      Wound
-                  </label>
-              </fieldset>
-          </div>
-          <div data-role="fieldcontain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                  <legend>
-                      Select a time range
-                  </legend>
-                  <input id="radio6" name="" value="radio1" type="radio">
-                  <label for="radio6">
-                      Hour
-                  </label>
-                  <input id="radio7" name="" value="radio7" type="radio">
-                  <label for="radio7">
-                      Day
-                  </label>
-                  <input id="radio8" name="" value="radio8" type="radio">
-                  <label for="radio8">
-                      Since March
-                  </label>
-              </fieldset>
+              <div class="ui-block-b">
+                  <div data-role="fieldcontain">
+                      <select id="roundmenuselect" name="">
+                          <option value="option1">
+                              Round
+                          </option>
+                          <option value="value">
+                              Hour
+                          </option>
+                          <option value="value">
+                              Day
+                          </option>
+                          <option value="value">
+                              Quarter
+                          </option>
+                      </select>
+                  </div>
+              </div>
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a data-role="button" href="#kill_scores">
+                  <a id="sharebutton" data-role="button" href="#kill_scores">
                       Share
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a data-role="button" href="#kill_scores">
-                      New Round
+                  <a id="newroundsubmit" data-role="button" data-theme="b" href="#kill_scores">
+                      New round
                   </a>
               </div>
           </div>
@@ -467,70 +509,7 @@
           </ul>
       </div>
   </div>
-  <!-- Distance -->
-  <div data-role="page" id="distance">
-      <div data-theme="a" data-role="header">
-          <h3>
-              Round 1
-          </h3>
-      </div>
-      <div data-role="content">
-          <div>
-              <p>
-                  <b>
-                      How far are you from the target?
-                      <br>
-                  </b>
-              </p>
-          </div>
-          <div data-role="fieldcontain">
-              <fieldset data-role="controlgroup" data-type="vertical">
-                  <legend>
-                      Choose:
-                  </legend>
-                  <input id="radio4" name="distance" value="radio4" type="radio">
-                  <label for="radio4">
-                      25 yards
-                  </label>
-                  <input id="radio3" name="distance" value="radio3" type="radio">
-                  <label for="radio3">
-                      50 yards
-                  </label>
-                  <input id="radio2" name="distance" value="radio2" type="radio">
-                  <label for="radio2">
-                      100 yards
-                  </label>
-                  <input id="radio1" name="distance" value="radio1" type="radio">
-                  <label for="radio1">
-                      200 yards
-                  </label>
-              </fieldset>
-          </div>
-          <a data-role="button" href="#distance">
-              Submit
-          </a>
-      </div>
-      <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#kill_scores" data-transition="fade" data-theme="" data-icon="home">
-                      Score
-                  </a>
-              </li>
-              <li>
-                  <a href="#home" data-transition="fade" data-theme="" data-icon="star">
-                      Home
-                  </a>
-              </li>
-              <li>
-                  <a href="#data_entry" data-transition="fade" data-theme="" data-icon="info">
-                      Track
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
-  <!-- Summary Page -->
+  <!-- Heatmaps -->
   <div data-role="page" id="score_summary">
       <div data-theme="a" data-role="header">
           <h3>
@@ -538,16 +517,6 @@
           </h3>
       </div>
       <div data-role="content">
-          <div>
-              <p>
-                  <b>
-                      Accuracy heatmap
-                  </b>
-              </p>
-          </div>
-          <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
-              <img src="http://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
-          </div>
           <div data-role="fieldcontain">
               <fieldset data-role="controlgroup" data-type="horizontal">
                   <legend>
@@ -567,7 +536,21 @@
                   </label>
               </fieldset>
           </div>
-          <a data-role="button" href="#score_summary">
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <div>
+                      <p>
+                          <b>
+                              Time interval
+                              <br>
+                          </b>
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+              </div>
+          </div>
+          <a data-role="button" href="#facebook">
               Share
           </a>
       </div>
@@ -703,7 +686,7 @@
                   Email
               </label>
               <input name="" id="textinput6" placeholder="Please enter your email" value=""
-              type="email">
+              type="text">
           </div>
           <div data-role="fieldcontain">
               <label for="textinput7">
@@ -713,12 +696,12 @@
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a data-role="button" data-transition="pop" data-theme="c" href="#login">
+                  <a data-role="button" data-transition="none" data-theme="c" href="#login">
                       Cancel
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a data-role="button" data-transition="pop" data-theme="b" href="javascript:cuser()">
+                  <a data-role="button" data-transition="none" data-theme="b" href="javascript:cuser()">
                       Register
                   </a>
               </div>

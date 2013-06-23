@@ -127,8 +127,9 @@ function cshot() {
         } else {
             var username = user.get('username');
             var options = { "type": "shots",
-                        "x": $('#textinput3').val(),
-                        "y": $('#textinput5').val(),
+                        "x": $('#horizontalnuminput').val(),
+                        "y": $('#verticalnuminput').val(),
+                        "distance": $('#distanceselect').val(),
                         "author": user.get('username')};
             client.createEntity(options, function (err, response) {
 

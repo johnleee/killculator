@@ -24,58 +24,18 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/login.css" />
         <title>Killculator</title>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="https://apigee.com/usergrid/sdk/usergrid.0.10.5.js"></script>
-        <script type="text/javascript">
-            
-            function cuser() {
-                            
-            // Initializing the SDK
-            var client = new Usergrid.Client({
-                                             orgName:'abhishekshiroor', // Your Usergrid organization name (or apigee.com username for App Services)
-                                             appName:'killculator',
-                                             buildCurl: true,
-                                             logging: true
-                                             });
-            alert('after client');
-            
-            var options = {
-                type:'users',
-                username:$('#applogin2').val(),
-                password:$('#apppassword').val(),
-                name:$('#appfname').val(),
-                city:'San Francisco'
-            };
-            
-            client.createEntity(options, function (err, marty) {
-                                if (err){
-                                alert('error');
-                                //Error - user not created
-                                } else {
-                                //Success - user created
-                                var name = marty.get('name');
-                                alert(name);
-                                }
-                                });
-            alert('after signup');
-                return true;
-            }
-            
-            
-            </script>
-
     </head>
     <body>
         <div class="app">
             <h1 id="companyname">Killculator</h1>
-            
+            <form name="input" action="index.html" method="post">
                 <div id="devicelogin">
                     <input name="appfname" id="appfname" placeholder="First name" value="" type="text"><br/>
-                    <input name="applogin" id="applogin2" placeholder="Email" value="" type="email"><br/>
-                    <input name="apppassword" id="apppassword" placeholder="Password" value="" type="password"> <br/>
-                    <input class="registerbutton" type="submit" value="Register" onclick="cuser();">
-                </div>
-            
+                        <input name="applogin" id="applogin2" placeholder="Email" value="" type="email"><br/>
+                            <input name="apppassword" id="apppassword" placeholder="Password" value="" type="password"> <br/>
+                                <input class="registerbutton" type="submit" value="Register">
+                                    </div>
+            </form>
         </div>
         <script type="text/javascript" src="cordova-2.5.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

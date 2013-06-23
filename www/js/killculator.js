@@ -115,3 +115,27 @@ function luser(){
                  });
     
 }
+
+function cshot() {
+    
+    //Then make calls against the API.  For example, you can
+    //get the logged in user entity this way:
+    client.getLoggedInUser(function(err, data, user) {
+        if(err) {
+            //Error - could not get logged in user
+            alert(err);
+        } else {
+            var username = user.get('username');
+            var options = { "type": "shots",
+                        "x": $('#textinput3').val(),
+                        "y": $('#textinput5').val(),
+                        "author": user.get('username')};
+            client.createEntity(options, function (err, response) {
+
+            if (err) { alert("write failed");
+            } else { alert("write succeeded"); } });
+        }
+    });
+}
+
+

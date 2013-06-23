@@ -59,15 +59,17 @@ function cuser() {
     
     client.createEntity(options, function (err, marty) {
                         if (err){
-                        alert('error');
+                        //alert('error');
                         //Error - user not created
+                        return false;
                         } else {
                         //Success - user created
                         var name = marty.get('name');
-                        alert(name);
+                        //alert(name);
+                        window.location = 'index.html#home';
                         }
                         });
-    alert('after signup');
+    //alert('after signup');
 }
 
 

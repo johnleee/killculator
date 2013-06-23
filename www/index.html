@@ -24,6 +24,49 @@
   
 </head>
 <body>
+  <!-- Login -->
+  <div data-role="page" id="login">
+      <div data-role="content">
+          <div style="">
+              <img style="width: 100%; height: 547%" src="https://s3.amazonaws.com/assets.codiqa.com/RLqt3VOCSGi7Nm6q7Xaz_gun3.jpg">
+          </div>
+          <div>
+              <p>
+                  <b>
+                      <span style="font-size: large;">
+                          KillCulator Login
+                      </span>
+                      <br>
+                  </b>
+              </p>
+          </div>
+          <div data-role="fieldcontain">
+              <label for="textinput9">
+                  Email
+              </label>
+              <input name="" id="textinput9" placeholder="Please enter your email" value=""
+              type="text">
+          </div>
+          <div data-role="fieldcontain">
+              <label for="textinput10">
+                  Password
+              </label>
+              <input name="" id="textinput10" placeholder="" value="" type="password">
+          </div>
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <a data-role="button" data-transition="pop" data-theme="c" href="#register">
+                      Register
+                  </a>
+              </div>
+              <div class="ui-block-b">
+                  <a data-role="button" data-transition="pop" data-theme="b" href="#home">
+                      Login
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
   <!-- Home -->
   <div data-role="page" id="home">
       <div data-theme="a" data-role="header">
@@ -625,6 +668,56 @@
                   </a>
               </li>
           </ul>
+      </div>
+  </div>
+  <!-- Register -->
+  <div data-role="page" id="register">
+      <div data-role="content">
+          <div style="">
+              <img style="width: 100%; height: 547%" src="https://s3.amazonaws.com/assets.codiqa.com/RLqt3VOCSGi7Nm6q7Xaz_gun3.jpg">
+          </div>
+          <div>
+              <p>
+                  <b>
+                      <span style="font-size: large;" data-mce-style="font-size: large;">
+                          KillCulator Registration
+                      </span>
+                      <br>
+                  </b>
+              </p>
+          </div>
+          <div data-role="fieldcontain">
+              <label for="textinput4">
+                  First name
+              </label>
+              <input name="" id="textinput4" placeholder="Please enter your name" value=""
+              type="text">
+          </div>
+          <div data-role="fieldcontain">
+              <label for="textinput6">
+                  Email
+              </label>
+              <input name="" id="textinput6" placeholder="Please enter your email" value=""
+              type="text">
+          </div>
+          <div data-role="fieldcontain">
+              <label for="textinput7">
+                  Password
+              </label>
+              <input name="" id="textinput7" placeholder="" value="" type="password">
+          </div>
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <a data-role="button" data-transition="pop" data-theme="c" href="#login">
+                      Cancel
+                  </a>
+              </div>
+              <div class="ui-block-b">
+                  <a data-role="button" data-transition="pop" data-theme="b" href="#home">
+                      Register
+                  </a>
+              </div>
+          </div>
       </div>
   </div>
 </body>

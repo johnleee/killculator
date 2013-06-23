@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
   
   <!-- Extra Codiqa features -->
-  <link rel="stylesheet" href="codiqa.ext.css">
+  <link rel="stylesheet" href="css/codiqa.ext.css">
   
   <link rel="stylesheet" href="https://codiqa.com/view/9fcb36ec/css">
   
@@ -23,7 +23,7 @@
   <script src="https://codiqa.com/view/9fcb36ec/js"></script>
   <script src="https://apigee.com/usergrid/sdk/usergrid.0.10.5.js"></script>
   <script src="js/killculator.js"></script>
-
+  <script src="heatmap.js"></script>
   
 </head>
 <body>
@@ -398,14 +398,17 @@
               </div>
               <div class="ui-block-b">
                   <div data-role="fieldcontain">
-                      <select id="targetselect" name="">
-                          <option value="option1">
-                              Streisand
+                      <select id="targetselect" name="" onchange="calcPercentages(this);">
+                        <option value="boar">
+                              Boar
                           </option>
-                          <option value="value">
+                          <option value="deer">
+                              Deer
+                          </option>
+                          <option value="norris">
                               Norris
                           </option>
-                          <option value="value">
+                          <option value="sasquach">
                               Sasquach
                           </option>
                       </select>
@@ -515,6 +518,15 @@
           <h3>
               Shooting Summary
           </h3>
+      </div>
+      <div id="heatmapArea" style="width:320px;padding:0;height:200px;position:relative;">
+          
+          <p>
+          
+          
+          
+          </p>
+          
       </div>
       <div data-role="content">
           <div data-role="fieldcontain">

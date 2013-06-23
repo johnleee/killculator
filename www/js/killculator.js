@@ -109,6 +109,7 @@ function luser(){
                                         var username = user.get('city');
                                         }
                                         });
+                 load_heat_map();
                  window.location = 'index.html#home';
                  }
                  
@@ -134,9 +135,225 @@ function cshot() {
             client.createEntity(options, function (err, response) {
 
             if (err) { alert("write failed");
-            } else { alert("write succeeded"); } });
+            } else { } });
         }
     });
+}
+
+function load_heat_map(){
+    
+    // Reading data
+    
+    
+    
+    client.getLoggedInUser(function(err, data, user) {
+                           
+                           if(err) {
+                           
+                           alert("failed to get user");
+                           
+                           }
+                           
+                           else {
+                           
+                           var config = {
+                           
+                           "element": document.getElementById("heatmapArea"),
+                           
+                           "radius": 20,
+                           
+                           "opacity": 50,
+                           
+                           "visible": true
+                           
+                           };
+                           
+                           var heatmap = h337.create(config);
+                           
+                           
+                           
+                           var shots = new Usergrid.Collection({ "client":client, "type":"shots", qs:{ limit:50, ql:"select * where author='" + user.get('username')+ "'"}});
+                           
+                           shots.fetch(
+                                       
+                                       function() { // Success
+                                       
+                                       var heatmapdata = {
+                                       
+                                       max: 20,
+                                       
+                                       data: []
+                                       
+                                       };
+                                       
+                                       while(shots.hasNextEntity()) {
+                                       
+                                       var shot = shots.getNextEntity();
+                                       
+                                       //                                            alert(shot.get("x"));
+                                       
+                                       //                                            alert(shot.get("y"));
+                                       
+                                       heatmapdata.data.push({
+                                                             
+                                                             "x": Number(shot.get("x")),
+                                                             
+                                                             "y": Number(shot.get("y")),
+                                                             
+                                                             "count": 20
+                                                             
+                                                             });
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       }
+                                       
+                                       heatmap.store.setDataSet(heatmapdata);
+                                       
+                                       }, function() { // Failure
+                                       
+                                       alert("read failed");
+                                       
+                                       });
+                           
+                           
+                           
+                           
+                           
+                           }
+                           
+                           });
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+function calcPercentages(sel) {
+    var target = sel.options[sel.selectedIndex].value;
+    console.log(target);
+    var killRadius = 1;
+    var woundRadius = 2;
+    if (target == 'boar') {
+        killRadius = 5;
+        woundRadius = 10;
+    } else if (target == 'deer') {
+        killRadius = 5;
+        woundRadius = 15;
+    } else if (target == 'norris') {
+        killRadius = 0;
+        woundRadius = 0;
+    } else if (target == 'sasquach') {
+        killRadius = 6;
+        woundRadius = 30;
+    }
+
+    // Reading data
+    var shots = new Usergrid.Collection({ "client":client, "type":"shots", qs:{ limit:50, ql:'order by created ASC'}  });
+    var totalShots = 0;
+    shots.fetch(
+        function() { // Success
+            while(shots.hasNextEntity()) {
+                var shot = shots.getNextEntity();
+                totalShots++;
+                //alert(book.get("title")); // Output the title of the book
+
+                var x = Number(shot.get("x"));
+                var y = Number(shot.get("y"));
+                var distance1 = Number(shot.get("distance"));
+                var distance2 = 0;
+
+                var kills = 3;
+                var wounds = 6;
+
+                var k = killRadius - ((distance1 + distance2) * (Math.sqrt((x*x) + (y*y))/ distance1));
+                var w = woundRadius - ((distance1 + distance2) * (Math.sqrt((x*x) + (y*y))/ distance1));
+                console.log(k);
+                console.log(w);
+
+                if (k > 0){
+                    kills++;
+                }
+
+                if (w > 0){
+                    wounds++;
+                }
+                
+                //console.log(kills);
+                //console.log(wounds);
+                //console.log(totalShots);
+                var killPercent = (kills/totalShots) * 100;
+                var woundPercent = (wounds/totalShots) * 100;
+                $('#kill50yards p').text(Math.round(killPercent) + "%");
+                $('#wound50yards p').text(Math.round(woundPercent) + "%");
+
+                distance2 = 100;
+                var kills = 2;
+                var wounds = 4;
+                
+                k = killRadius - ((distance1 + distance2) * (Math.sqrt((x*x) + (y*y))/ distance1));
+                w = woundRadius - ((distance1 + distance2) * (Math.sqrt((x*x) + (y*y))/ distance1));
+                if (k > 0){
+                    kills++;
+                }
+
+                if (w > 0){
+                    wounds++;
+                }
+                
+                
+                var killPercent = (kills/totalShots) * 100;
+                var woundPercent = (wounds/totalShots) * 100;
+                $('#kill100yards p').text(Math.round(killPercent) + "%");
+                $('#wound100yards p').text(Math.round(woundPercent) + "%");
+
+
+                distance2 = 200;
+                var kills = 1;
+                var wounds = 2;
+
+                k = killRadius - ((distance1 + distance2) * (Math.sqrt((x*x) + (y*y))/ distance1));
+                w = woundRadius - ((distance1 + distance2) * (Math.sqrt((x*x) + (y*y))/ distance1));
+                if (k > 0){
+                    kills++;
+                }
+
+                if (w > 0){
+                    wounds++;
+                }
+                
+                
+                var killPercent = (kills/totalShots) * 100;
+                var woundPercent = (wounds/totalShots) * 100;
+                $('#kill200yards p').text(Math.round(killPercent) + "%");
+                $('#wound200yards p').text(Math.round(woundPercent) + "%");
+
+                if (target == 'norris') {
+                     $('#kill50yards p').text("0%");
+                     $('#wound50yards p').text("0%");
+                      $('#kill100yards p').text("0%");
+                     $('#wound100yards p').text("0%");
+                    $('#kill200yards p').text("0%");
+                    $('#wound200yards p').text("0%");
+                }
+
+
+        } }, function() { // Failure
+            alert("read failed");
+        });
+
+
+    
+    
+    
+
+    
 }
 
 

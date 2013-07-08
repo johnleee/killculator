@@ -1,11 +1,111 @@
 
+// Wait for Cordova to load - for phonegap
+document.addEventListener("deviceready", onDeviceReady, false);
+
+//for testing on browser
+//document.addEventListener("DOMContentLoaded", onDeviceReady, false);
+
+//Create the database the parameters are 1. the database name 2.version number 
+// 3. a description 4. the size of the database (in bytes) 5 * 1024 x 1024 = 5MB
+var dbName = "ShotgunDatabase";
+var dbVersion = "1.0";
+var dbDesc = "Shotgun Database 1.0"
+var dbSize = 5 * 1024 * 1024; 
+var db;
+
+// Populate the database 
+function populateDB(tx) {
+    tx.executeSql('DROP TABLE IF EXISTS SHOTS');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS SHOTS (id INTEGER PRIMARY KEY ASC, x INTEGER, y INTEGER, distance INTEGER, author TEXT)');
+}
+
+// Query the database
+function queryDB(tx) {
+    tx.executeSql('SELECT * FROM SHOTS', [], querySuccess, errorCB);
+}
+
+// Query the success callback
+function querySuccess(tx, results) {
+    console.log("Returned rows = " + results.rows.length);
+    for (i = 0; i < results.rows.length; i++) {
+      //Get the current row
+      var row = results.rows.item(i);
+      console.log(row);
+    }
+
+    // this will be true since it was a select statement and so rowsAffected was 0
+    if (!results.rowsAffected) {
+        console.log('No rows affected!');
+        return false;
+    }
+    // for an insert statement, this property will return the ID of the last inserted row
+    console.log("Last inserted row ID = " + results.insertId);
+}
+
+// Transaction error callback
+function errorCB(err) {
+    console.log("Error processing SQL: "+err.code);
+}
+
+// Transaction success callback
+function successCB() {
+    db = window.openDatabase(dbName, dbVersion, dbDesc, dbSize);
+    db.transaction(queryDB, errorCB);
+}
+
+// Cordova is ready
+function onDeviceReady() {
+    if (window.openDatabase) {
+      var db = window.openDatabase(dbName, dbVersion, dbDesc, dbSize);
+      db.transaction(populateDB, errorCB, successCB);
+    } else {
+        alert("WebSQL is not supported by this device");
+    }
+}
+
+function addShot() {
+    var x = $('#horizontalnuminput').val();
+    var y = $('#verticalnuminput').val();
+    var distance =  $('#distanceselect').val();
+
+    if (x !== "" && y !== "") {
+        db.transaction(function(tx) {
+            tx.executeSql("INSERT INTO SHOTS (x, y, distance) VALUES (?, ?, ?)", [x, y, distance]);
+        });
+        db.transaction(function(tx) {
+            tx.executeSql('SELECT * FROM SHOTS', [], querySuccess, errorCB);
+        });
+        //db.transaction(queryDB, errorCB);
+    } else {
+        showAlert("You must enter horizontal and vertical inches!", "Invalid", "Yes sir!");
+    }
+}
+
+// Show a custom alert, only works in phonegap
+function showAlert(message, title, buttonName) {
+    console.log(navigator);
+    navigator.notification.alert(
+        message, 
+        alertDismissed, // callback
+        title,            
+        buttonName
+    );
+}
+
+// alert dialog dismissed
+function alertDismissed() {
+    // do something
+}
+
+
 
 var client = new Usergrid.Client({
-                                 orgName:'abhishekshiroor', // Your Usergrid organization name (or apigee.com username for App Services)
-                                 appName:'killculator',
+                                 orgName:'dabuda', // Your Usergrid organization name (or apigee.com username for App Services)
+                                 appName:'sandbox',
                                  buildCurl: true,
                                  logging: true
                                  });
+
 
 $(document).ready(function() {
                   $('#textinput9').focus(function() {
@@ -117,6 +217,7 @@ function luser(){
     
 }
 
+//add shot to usergrid
 function cshot() {
     
     //Then make calls against the API.  For example, you can
@@ -226,12 +327,6 @@ function load_heat_map(){
                            
                            });
     
-    
-    
-    
-    
-    
-    
 }
 
 
@@ -262,7 +357,6 @@ function calcPercentages(sel) {
             while(shots.hasNextEntity()) {
                 var shot = shots.getNextEntity();
                 totalShots++;
-                //alert(book.get("title")); // Output the title of the book
 
                 var x = Number(shot.get("x"));
                 var y = Number(shot.get("y"));
@@ -347,13 +441,6 @@ function calcPercentages(sel) {
         } }, function() { // Failure
             alert("read failed");
         });
-
-
-    
-    
-    
-
-    
 }
 
 

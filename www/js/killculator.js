@@ -105,7 +105,11 @@ var client = new Usergrid.Client({
                                  buildCurl: true,
                                  logging: true
                                  });
-
+//atttempt to fix apigee usergrid expired access token
+//from changelog.md
+//- Added logout call to client create to clear out any remnant token 
+// from a past session
+client.logout();
 
 $(document).ready(function() {
                   $('#textinput9').focus(function() {
